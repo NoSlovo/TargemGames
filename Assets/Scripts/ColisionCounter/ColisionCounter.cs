@@ -8,18 +8,28 @@ public class ColisionCounter : MonoBehaviour
     [SerializeField] private string _text = "Количество столкновений:";
     [SerializeField] private Button _buttonReset;
     [SerializeField] private List<ShapeElement> _shapeElements;
-    
-    private int _counterKick;
 
-    private void OnEnable()=> Listen();
-    
+    private int _counterKick;
+    private float _delay = 1f;
+    private float _maxDelayValue = 1f;
+
+    private void OnEnable() => Listen();
+
     private void Awake() => _buttonReset.onClick.AddListener(Reset);
 
-    private void Start() => _textCounter.text = _text;
+    private void Start() => Show();
 
-    private void Update() => _textCounter.text = _text + _counterKick;
+    private void Update() => _delay -= Time.fixedDeltaTime;
 
-    private void Handler()=> _counterKick++;
+    private void Handler()
+    {
+        if (_delay <= 0)
+        {
+            _counterKick++;
+            Show();
+            _delay = _maxDelayValue;
+        }
+    }
 
     private void Listen()
     {
@@ -33,7 +43,13 @@ public class ColisionCounter : MonoBehaviour
             datactionColaided.ObjectsTouched -= Handler;
     }
 
-    private void Reset() => _counterKick = 0;
-    
+    private void Show() => _textCounter.text = _text + _counterKick;
+
+    private void Reset()
+    {
+        _counterKick = 0;
+        Show();
+    }
+
     private void OnDisable() => DisableListen();
 }

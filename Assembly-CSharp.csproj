@@ -52,10 +52,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GamiTimer\GameTimer.cs" />
      <Compile Include="Assets\Scripts\Figure\ShapeElement.cs" />
      <Compile Include="Assets\Scripts\Figure\Figure.cs" />
      <Compile Include="Assets\Scripts\GraviteObjets\GravityPoint.cs" />
-     <Compile Include="Assets\Scripts\GamiTimer\GameTimer.cs" />
      <Compile Include="Assets\Scripts\ColisionCounter\ColisionCounter.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
