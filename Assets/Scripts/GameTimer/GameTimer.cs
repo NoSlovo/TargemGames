@@ -29,5 +29,10 @@ public class GameTimer : MonoBehaviour
         _timer.text = _text + _timeValue;
     }
 
-    private void Reset() => _timeValue = _timeStartDefaultValue;
+    private void Reset()
+    {
+        _timeValue = _timeStartDefaultValue;
+        _oneSecondDuration = _oneSecondValue;
+    }
+
 }

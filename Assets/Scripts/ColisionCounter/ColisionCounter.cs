@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class ColisionCounter : MonoBehaviour
 {
     [SerializeField] private Text _textCounter;
-    [SerializeField] private string _text = "Количество столкновений:";
     [SerializeField] private Button _buttonReset;
     [SerializeField] private List<ShapeElement> _shapeElements;
 
+    private const string _text = "Количество столкновений:";
     private int _counterKick;
     private float _delay = 1f;
     private float _maxDelayValue = 1f;
