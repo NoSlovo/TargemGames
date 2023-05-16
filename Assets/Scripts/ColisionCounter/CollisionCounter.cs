@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ColisionCounter : MonoBehaviour
+public class CollisionCounter : MonoBehaviour
 {
     [SerializeField] private Text _textCounter;
     [SerializeField] private Button _buttonReset;
-    [SerializeField] private List<ShapeElement> _shapeElements;
+    [SerializeField] private List<FigureElement> _figureElements;
 
     private const string _text = "Количество столкновений:";
     private int _counterKick;
@@ -33,14 +33,14 @@ public class ColisionCounter : MonoBehaviour
 
     private void Listen()
     {
-        foreach (var datactionColaided in _shapeElements)
-            datactionColaided.ObjectsTouched += Handler;
+        foreach (var figureElement in _figureElements)
+            figureElement.ObjectsTouched += Handler;
     }
 
     private void DisableListen()
     {
-        foreach (var datactionColaided in _shapeElements)
-            datactionColaided.ObjectsTouched -= Handler;
+        foreach (var figureElement in _figureElements)
+            figureElement.ObjectsTouched -= Handler;
     }
 
     private void Show() => _textCounter.text = _text + _counterKick;

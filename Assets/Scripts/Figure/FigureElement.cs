@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ShapeElement : MonoBehaviour
+public class FigureElement : MonoBehaviour
 {
     private float _repulsiveForce;
     private float _repulsiveMaxValue = 500f;
@@ -36,7 +36,8 @@ public class ShapeElement : MonoBehaviour
         for (int i = 0; i < overlapperdColliders.Length; i++)
         {
             Rigidbody rigidbody = overlapperdColliders[i].attachedRigidbody;
-            if (rigidbody)
+            
+            if (rigidbody && rigidbody.isKinematic == false)
             {
                 rigidbody.AddExplosionForce(power, transform.position, 10f, 0, ForceMode.Impulse);
             }

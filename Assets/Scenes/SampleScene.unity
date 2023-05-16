@@ -2177,7 +2177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textCounter: {fileID: 2086850685}
   _buttonReset: {fileID: 1026956983}
-  _shapeElements:
+  _figureElements:
   - {fileID: 1437102628}
   - {fileID: 102334784}
   - {fileID: 439692388}
